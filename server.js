@@ -22,7 +22,7 @@ try {
 }
 
 try {
-	numProcessingUnits = (await exec('nproc')).stdout;
+	numProcessingUnits = (await exec('nproc --all')).stdout;
 	numProcessingUnits = Number(numProcessingUnits);
 } catch (err) {
 	console.warn(err.stderr);
