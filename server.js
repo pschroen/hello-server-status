@@ -14,7 +14,8 @@ let serverUptime;
 let serverLoad;
 
 try {
-	osRelease = (await exec('cat /etc/os-release')).stdout;
+	osRelease = (await exec('cat /etc/issue')).stdout;
+	osRelease = osRelease.split(' ')[0];
 } catch (err) {
 	console.warn(err.stderr);
 }
