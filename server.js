@@ -11,7 +11,7 @@ const app = express();
 //
 
 app.get('/server-status', (req, res) => {
-	res.send('Hello World!');
+	res.json({});
 });
 
 //
