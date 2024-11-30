@@ -45,6 +45,7 @@ app.get('/server-status', async (req, res) => {
 	try {
 		serverLoadPercentage = (await exec('cat /proc/loadavg')).stdout;
 		serverLoadPercentage = (Number(serverLoadPercentage.split(' ')[0]) / numProcessingUnits) * 100;
+		serverLoadPercentage = Math.round((serverLoadPercentage + Number.EPSILON) * 100) / 100;
 	} catch (err) {
 		console.warn(err.stderr);
 	}
