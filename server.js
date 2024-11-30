@@ -10,12 +10,20 @@ import child_process from 'child_process';
 const exec = promisify(child_process.exec);
 
 let osRelease;
+let numProcessingUnits;
 let serverUptime;
-let serverLoad;
+let serverLoadPercentage;
 
 try {
 	osRelease = (await exec('cat /etc/issue')).stdout;
 	osRelease = osRelease.split(' ')[0];
+} catch (err) {
+	console.warn(err.stderr);
+}
+
+try {
+	numProcessingUnits = (await exec('nproc')).stdout;
+	numProcessingUnits = Number(numProcessingUnits);
 } catch (err) {
 	console.warn(err.stderr);
 }
@@ -35,8 +43,8 @@ app.get('/server-status', async (req, res) => {
 	}
 
 	try {
-		serverLoad = (await exec('cat /proc/loadavg')).stdout;
-		serverLoad = Number(serverLoad.split(' ')[0]);
+		serverLoadPercentage = (await exec('cat /proc/loadavg')).stdout;
+		serverLoadPercentage = (Number(serverLoadPercentage.split(' ')[0]) / numProcessingUnits) * 100;
 	} catch (err) {
 		console.warn(err.stderr);
 	}
@@ -46,7 +54,8 @@ app.get('/server-status', async (req, res) => {
 		currentTime,
 		restartTime: currentTime - serverUptime,
 		serverUptime,
-		serverLoad
+		serverLoadPercentage,
+		numProcessingUnits
 	});
 });
 
