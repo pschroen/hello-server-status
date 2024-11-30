@@ -1,27 +1,30 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "hello-server-status",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "description": "A simple status API endpoint built on Express, like the Apache status page (mod_status) from back in the day.",
+  "homepage": "https://hello-server-status.glitch.me/server-status",
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "server",
+    "status"
+  ],
+  "author": "pschroen",
+  "private": true,
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-server-status"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "16.x"
+  },
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.1"
-  },
-  "engines": {
-    "node": "14.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+    "express": "latest"
+  }
 }
