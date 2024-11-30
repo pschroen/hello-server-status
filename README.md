@@ -1,28 +1,18 @@
-# hello-express
+## hello-server-status
 
-A server that serves a webpage, its resources, and some data
+A server that serves a webpage, its resources, and some data.
 
-## Your Project
+[https://hello-server-status.glitch.me/server-status](https://hello-server-status.glitch.me/server-status)
 
-On the front-end,
+#### See also
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+Apache Module mod_status:  
+[https://httpd.apache.org/docs/2.4/mod/mod_status.html](https://httpd.apache.org/docs/2.4/mod/mod_status.html)
 
-On the back-end,
+#### Dev notes
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+This is a starter app meant for copy-pasting the `/server-status` route into your Express project. Comment-out the status data you don't want to reveal about your server.
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+<br>
 
-## Made by [Glitch](https://glitch.com/)
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )
+[pschroen](https://ufo.ai/)
