@@ -15,7 +15,7 @@
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-server-status"
   },
-  "license": "MIT",
+  "license": "ISC",
   "engines": {
     "node": "16.x"
   },
