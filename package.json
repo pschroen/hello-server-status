@@ -1,7 +1,7 @@
 {
   "name": "hello-server-status",
   "version": "0.0.1",
-  "description": "A simple status API endpoint built on Express, like the Apache status page (mod_status) from back in the day.",
+  "description": "A simple status API endpoint built on Express, like the Apache status page.",
   "homepage": "https://hello-server-status.glitch.me/server-status",
   "keywords": [
     "node",
