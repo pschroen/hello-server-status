@@ -95,6 +95,7 @@ console.log(serverDetails);
 import express from 'express';
 
 const app = express();
+app.set('json spaces', 2); // pretty print
 
 app.get('/server-status', async (req, res) => {
 	const currentTime = Math.floor(Date.now() / 1000); // seconds
