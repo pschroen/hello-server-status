@@ -114,6 +114,8 @@ app.get('/server-status', async (req, res) => {
 		console.warn(err.stderr);
 	}
 
+	serverDetails = await getDetails();
+
 	res.json({
 		...serverDetails,
 		currentTime,
