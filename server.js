@@ -70,18 +70,18 @@ async function getDetails() {
 	}
 
 	const data = {
-		// packageVersion: `${process.env.npm_package_name}/${process.env.npm_package_version}`,
-		projectDomain: `${process.env.PROJECT_DOMAIN}.glitch.me`,
+		packageVersion: process.env.npm_package_name && process.env.npm_package_version ? `${process.env.npm_package_name}/${process.env.npm_package_version}` : undefined,
+		projectDomain: process.env.PROJECT_DOMAIN ? `${process.env.PROJECT_DOMAIN}.glitch.me` : undefined,
 		networkName: `${ipinfo.hostname} (${ipinfo.ip})`,
-		serverVersion: `Node/${process.versions.node} (${osRelease})`,
-		processorName,
-		numProcessingUnits,
-		memTotal,
-		memFree,
-		swapTotal,
-		swapFree,
-		storageTotal,
-		storageAvailable
+		serverVersion: `Node/${process.versions.node}${osRelease ? ` (${osRelease})` : ''}`,
+		processorName: processorName || undefined,
+		numProcessingUnits: numProcessingUnits || undefined,
+		memTotal: memTotal || undefined,
+		memFree: memFree || undefined,
+		swapTotal: swapTotal || undefined,
+		swapFree: swapFree || undefined,
+		storageTotal: storageTotal || undefined,
+		storageAvailable: storageAvailable || undefined
 	};
 
 	return data;
@@ -119,9 +119,9 @@ app.get('/server-status', async (req, res) => {
 	res.json({
 		...serverDetails,
 		currentTime,
-		restartTime: currentTime - serverUptime,
-		serverUptime,
-		normalizedLoadAverage
+		restartTime: currentTime - serverUptime || undefined,
+		serverUptime: serverUptime || undefined,
+		normalizedLoadAverage: normalizedLoadAverage || undefined
 	});
 });
 
