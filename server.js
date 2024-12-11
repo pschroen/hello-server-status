@@ -74,14 +74,14 @@ async function getDetails() {
 		projectDomain: process.env.PROJECT_DOMAIN ? `${process.env.PROJECT_DOMAIN}.glitch.me` : undefined,
 		networkName: `${ipinfo.hostname} (${ipinfo.ip})`,
 		serverVersion: `Node/${process.versions.node}${osRelease ? ` (${osRelease})` : ''}`,
-		processorName: processorName || undefined,
-		numProcessingUnits: numProcessingUnits || undefined,
 		memTotal: memTotal || undefined,
 		memFree: memFree || undefined,
 		swapTotal: swapTotal || undefined,
 		swapFree: swapFree || undefined,
 		storageTotal: storageTotal || undefined,
-		storageAvailable: storageAvailable || undefined
+		storageAvailable: storageAvailable || undefined,
+		processorName: processorName || undefined,
+		numProcessingUnits: numProcessingUnits || undefined
 	};
 
 	return data;
